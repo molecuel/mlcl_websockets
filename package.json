@@ -1,0 +1,46 @@
+{
+  "name": "mlcl_websockets",
+  "version": "0.0.1",
+  "description": "Websocket support for molecuel",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://DominicBoettger@github.com/molecuel/mlcl_websockets.git"
+  },
+  "keywords": [
+    "socket.io",
+    "websocket",
+    "molecuel"
+  ],
+  "author": "Dominic Böttger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/molecuel/mlcl_websockets/issues"
+  },
+  "homepage": "https://github.com/molecuel/mlcl_websockets#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-tslint": "^4.3.2",
+    "gulp-typescript": "^2.12.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "gulpclass": "0.0.8",
+    "merge2": "^1.0.1",
+    "ts-node": "^0.5.5",
+    "tslint": "^3.5.0",
+    "tslint-stylish": "^2.1.0-beta",
+    "typescript": "^1.8.2",
+    "typescript-require": "^0.2.9-1"
+  },
+  "devconfig": {
+    "paths": {
+      "source": "src/**/*.ts",
+      "dist": "dist/"
+    }
+  }
+}
