@@ -1,7 +1,7 @@
 'use strict';
 class MlclWebsockets {
   constructor() {
-    console.log('hello');
+    console.log('helfaslo');
   }
 }
 
