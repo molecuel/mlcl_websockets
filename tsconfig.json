@@ -10,20 +10,13 @@
     "sourceMap": false
   },
   "files": [
-    "./src/index.ts",
-    "./tasks/gulpclass.ts",
-    "./typings/del/del.d.ts",
-    "./typings/glob/glob.d.ts",
-    "./typings/gulp-plumber/gulp-plumber.d.ts",
-    "./typings/gulp-tslint/gulp-tslint.d.ts",
-    "./typings/gulp-typescript/gulp-typescript.d.ts",
-    "./typings/gulp/gulp.d.ts",
-    "./typings/merge2/merge2.d.ts",
-    "./typings/minimatch/minimatch.d.ts",
-    "./typings/node/node.d.ts",
-    "./typings/orchestrator/orchestrator.d.ts",
-    "./typings/q/Q.d.ts",
-    "./typings/vinyl/vinyl.d.ts"
+    "src/index.ts",
+    "tasks/gulpclass.ts"
+  ],
+  "exclude": [
+    "typings/browser.d.ts",
+    "typings/browser",
+    "node_modules"
   ],
   "atom": {
     "rewriteTsconfig": false,

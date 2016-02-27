@@ -1,4 +1,5 @@
 /// <reference path='../node_modules/gulpclass/index.d.ts'/>
+/// <reference path="../typings/main.d.ts"/>
 import {Gulpclass, Task, SequenceTask} from 'gulpclass/Decorators';
 
 import * as gulp from 'gulp';
@@ -27,9 +28,9 @@ export class Gulpfile {
    * It reads the data of the devconfig object in the package.json file
    */
   @Task('config:readpkgjson')
-  readpkgjson():any {
+  readpkgjson(): any {
     var configobject = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-    if(configobject && configobject.devconfig) {
+    if (configobject && configobject.devconfig) {
       this.config = configobject.devconfig;
     }
   }
@@ -39,7 +40,7 @@ export class Gulpfile {
    */
   @Task('clean>>dist')
   clean(cb: Function) {
-      return del(['./dist/**'], cb);
+    return del(['./dist/**'], cb);
   }
 
   /**
@@ -62,8 +63,8 @@ export class Gulpfile {
    * Typescript compile task
    */
   @Task('ts>>compile')
-  tscompile() {
-    let sourcepaths = ['typings/**/*.d.ts'];
+  tscompile(): any {
+    let sourcepaths = [];
     sourcepaths.push(this.config.paths.source);
     var tsResult = gulp.src(sourcepaths)
       .pipe(plumber())
@@ -75,16 +76,16 @@ export class Gulpfile {
 
   @SequenceTask('build') // this special annotation using "run-sequence" module to run returned tasks in sequence
   build() {
-      return [['clean>>dist', 'ts>>lint'], 'ts>>compile'];
+    return [['clean>>dist', 'ts>>lint'], 'ts>>compile'];
   }
 
   @SequenceTask('watch') // this special annotation using "run-sequence" module to run returned tasks in sequence
-  watch() {
-      return gulp.watch(this.config.paths.source, ['build']);
+  watch(): any {
+    return gulp.watch(this.config.paths.source, ['build']);
   }
 
   @SequenceTask('default')
   default() { // because this task has "default" name it will be run as default gulp task
-      return ['build', 'watch'];
+    return ['build', 'watch'];
   }
 }

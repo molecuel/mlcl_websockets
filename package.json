@@ -42,5 +42,8 @@
       "source": "src/**/*.ts",
       "dist": "dist/"
     }
+  },
+  "dependencies": {
+    "socket.io": "^1.4.5"
   }
 }
